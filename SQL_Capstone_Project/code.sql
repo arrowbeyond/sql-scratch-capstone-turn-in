@@ -49,11 +49,11 @@ GROUP BY 1, 2
 ORDER BY 3 DESC;
 
 /* Count where visitors = purchase > 2 options */
-SELECT COUNT(user_id) AS 'Purchase Count'
+SELECT COUNT(DISTINCT user_id) AS 'Purchase Count'
 FROM page_visits
 WHERE page_name = '4 - purchase';
 
-SELECT page_name AS 'Page Name', COUNT(user_id) AS 'Count'
+SELECT page_name AS 'Page Name', COUNT(DISTINCT user_id) AS 'Count'
 FROM page_visits
 GROUP BY page_name;
 
